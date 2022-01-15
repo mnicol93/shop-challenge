@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+}
+h1{
+  color: white;
+  display: flex;
+  align-items: center;
+}
+body{
+  background-image: linear-gradient(
+    20deg,
+    hsl(240deg 80% 10%) 0%,
+    hsl(247deg 70% 9%) 9%,
+    hsl(251deg 54% 7%) 18%,
+    hsl(250deg 29% 6%) 27%,
+    hsl(60deg 5% 4%) 36%,
+    hsl(60deg 5% 3%) 45%,
+    hsl(60deg 5% 2%) 55%,
+    hsl(60deg 5% 0%) 64%,
+    hsl(0deg 39% 2%) 73%,
+    hsl(0deg 37% 4%) 82%,
+    hsl(0deg 32% 7%) 91%,
+    hsl(0deg 29% 8%) 100%
+  );
+}
