@@ -1,12 +1,16 @@
-import { Container, Card, Button, Spinner, Accordion } from "react-bootstrap";
+import { Container, Card, Spinner, Accordion } from "react-bootstrap";
+import AccordionHeader from "react-bootstrap/esm/AccordionHeader";
+import AccordionBody from "react-bootstrap/esm/AccordionBody";
 
 import { useEffect, useState } from "react";
 
-// import Tooltip from './Shared/Tooltip'
+import LikeBtn from './Shared/Like/LikeBtn';
 
 import './Home.css'
-import AccordionHeader from "react-bootstrap/esm/AccordionHeader";
-import AccordionBody from "react-bootstrap/esm/AccordionBody";
+
+
+//TODO: Media might be video, add condition
+//      Add Like button and functionality
 
 function Home(){
     const [error, setError] = useState(null);
@@ -67,7 +71,7 @@ function Home(){
                     </Card.Text>
                     {/* <Button className="before-btn" variant="primary">BEFORE</Button>
                     <Button className="after-btn"  variant="primary">NEXT</Button> */}
-                    <Card.Footer><Button className="like-btn" variant="primary">LIKE</Button></Card.Footer>
+                    <Card.Footer><div><LikeBtn /></div></Card.Footer>
                 </Card.Body>
             </Card> 
         </Container>

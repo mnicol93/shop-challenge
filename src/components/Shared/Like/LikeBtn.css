@@ -1,0 +1,9 @@
+.LikeHeart {
+  background-color: rgb(202, 22, 22);
+
+  width: 150px;
+  height: 150px;
+  position: relative;
+
+  transform: rotate(45deg);
+}
