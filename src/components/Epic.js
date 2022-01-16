@@ -41,8 +41,6 @@ function Epic(){
             console.log(err);
         });
     }, []);
-    console.log(itemsDate);
-    console.log(itemsImg);
     if(error){
         return <div>Error: {error.message}</div>;
     }else if(!isLoaded){
