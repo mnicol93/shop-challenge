@@ -7,19 +7,17 @@ h1{
   align-items: center;
 }
 body{
-  background-image: linear-gradient(
-    20deg,
-    hsl(240deg 80% 10%) 0%,
-    hsl(247deg 70% 9%) 9%,
-    hsl(251deg 54% 7%) 18%,
-    hsl(250deg 29% 6%) 27%,
-    hsl(60deg 5% 4%) 36%,
-    hsl(60deg 5% 3%) 45%,
-    hsl(60deg 5% 2%) 55%,
-    hsl(60deg 5% 0%) 64%,
-    hsl(0deg 39% 2%) 73%,
-    hsl(0deg 37% 4%) 82%,
-    hsl(0deg 32% 7%) 91%,
-    hsl(0deg 29% 8%) 100%
-  );
+  /* background-image: linear-gradient(
+    15deg,
+    hsl(240deg 49% 8%) 0%,
+    hsl(315deg 66% 6%) 13%,
+    hsl(1deg 67% 6%) 25%,
+    hsl(27deg 100% 4%) 37%,
+    hsl(60deg 33% 3%) 50%,
+    hsl(41deg 39% 5%) 63%,
+    hsl(29deg 34% 8%) 75%,
+    hsl(16deg 28% 10%) 87%,
+    hsl(0deg 23% 13%) 100%
+  ); */
+  
 }
