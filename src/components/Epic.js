@@ -22,24 +22,27 @@ function Epic() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [itemsImg, setItemsImg] = useState([]);
-  const [startDate, setStartDate] = useState(new Date('2019-05-30'));
+  const [startDate, setStartDate] = useState(new Date());
   const [year, setYear] = useState();
   const [month, setMonth] = useState();
   const [day, setDay] = useState();
 
-
-  const apiKey = "?api_key=KlkDfF9JFLyn7nS1iwrO5hDtOX3vvghSZeGWLpgd";
+    const apiKey = "?api_key=WnOxA7IphY4Xd6pLKxxEFoo54A0QaoSdi3qjfcDw"
+//   const apiKey = "?api_key=KlkDfF9JFLyn7nS1iwrO5hDtOX3vvghSZeGWLpgd";
   const apiImg = `https://api.nasa.gov/EPIC/api/natural/date/`;
 
   let format = isMobile === true ? "jpg" : "png"; //Will load picture format depending on amount of data available.
 
   //https://api.nasa.gov/EPIC/archive/natural/${year}/${month}/${day}/${format}/${picId}.${format}?api_key=DEMO_KEY
 
+  //https://stackoverflow.com/questions/44923806/date-picker-timezone-shift
+
   let handleChange = (date) => {
+    console.log(date);
     setStartDate(date);
     setYear(date.getFullYear());
     setMonth(("0" + (date.getMonth()+1)).slice(-2));
-    setDay(("0" + date.getDate()).slice(-2));
+    setDay(("0" + (date.getDate())).slice(-2));
   };
 
   useEffect(() => {
@@ -48,8 +51,12 @@ function Epic() {
         .then((result) => {
         setIsLoaded(true);
         setItemsImg(result);
-        console.log(`${apiImg}${startDate.toISOString().split("T")[0]}${apiKey}`);
-        console.log(result);
+        // console.log("======= DATES =======")
+        // console.log(startDate.toDateString());
+        // console.log(startDate.toISOString().split("T")[0])
+        // console.log(`${apiImg}${startDate.toISOString().split("T")[0]}${apiKey}`);
+        // console.log(result);
+        // console.log("==== END OF DATES ====")
         },
     (error) => {
         setIsLoaded(true);
@@ -59,9 +66,9 @@ function Epic() {
       .catch((err) => {
         console.log(err);
       });
-  }, [apiImg]);
+  }, [apiImg, startDate]);
 
-  console.log(itemsImg);
+
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -75,10 +82,11 @@ function Epic() {
 
     
   }
+
   return (
     <>
       <DatePicker selected={startDate} onChange={handleChange} dateFormat="yyyy-MM-dd" />
-        <p>{itemsImg.map}</p>
+        <p>{year}-{month}-{day}</p>
       {itemsImg.map((item)=>{
           return(
             <Container>
@@ -96,7 +104,6 @@ function Epic() {
             </Container>
           )
       })
-
       }
     </>
   );
