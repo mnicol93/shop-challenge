@@ -1,0 +1,11 @@
+.datePick{
+    margin-bottom: 12px;
+    margin-left: 10px;
+    justify-content: flex-end;
+}
+.datePick:hover{
+    cursor: pointer;
+}
+.container{
+    width: 50%;
+}

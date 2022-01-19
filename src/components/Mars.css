@@ -1,0 +1,6 @@
+.box-perpage{
+    display: grid;
+    justify-items: flex-end;
+    margin-right: 6px;
+    margin-top: 10px;
+}
