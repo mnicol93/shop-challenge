@@ -7,12 +7,22 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Pagination from '@mui/material/Pagination'
 import Grid from '@mui/material/Grid'
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import IconButton from '@mui/material/IconButton';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
+import Typography from '@mui/material/Typography';
 
 import './Mars.css'
 
+// TODO: Line 87: Change Grid item xs depending on screen resolution 
+
 export default function Mars(){
-    let page = 2;
-    let sol = 100;
+    let page = 0;
+    let sol = 1000;
     let totalPages = 0;
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -30,7 +40,6 @@ export default function Mars(){
         .then((result) => {
             setIsLoaded(true);
             setItems(result);
-            console.log(result);
         },
         (error)=>{
             setIsLoaded(true);
@@ -73,7 +82,38 @@ export default function Mars(){
         </Box>   
         </div>
         <Grid container spacing={2}>
-
+         { items.photos?.map((item)=>{
+             return(
+                <Grid item sx={4}>
+                    <Card sx={{ width: 345 }}>
+                    <CardMedia
+                        component="img"
+                        height="240"
+                        image={item.img_src}
+                        alt={item.id}
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            {item.camera.name}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            {item.camera.full_name}
+                        </Typography>
+                    </CardContent>
+                    <CardActions disableSpacing>
+                        <IconButton aria-label="add to favorites">
+                            {/* <FavoriteIcon /> */}
+                        </IconButton>
+                        <IconButton aria-label="share">
+                            {/* <ShareIcon /> */}
+                        </IconButton>
+                    </CardActions>
+                    </Card>
+                </Grid>
+             )
+         })
+            
+         }
         </Grid>
         <footer className="pagination"><Pagination count={10} variant="outlined" /></footer>
       </>
